@@ -1,0 +1,69 @@
+{
+  "name": "drc-embassy-management-system",
+  "version": "1.0.0",
+  "description": "Web-based management system for DRC Embassy in Nairobi, Kenya",
+  "main": "index.php",
+  "scripts": {
+    "dev": "start http://localhost/bomoko",
+    "start": "npm run dev",
+    "test": "echo 'Running system tests...' && php test_system.php",
+    "test:config": "echo 'Testing configuration...' && php test_config.php",
+    "test:db": "echo 'Testing database connection...' && php test_db.php",
+    "test:php": "echo 'Testing PHP configuration...' && php php_check.php",
+    "setup": "echo 'Setting up database...' && php setup_database.php",
+    "status": "echo 'Checking system status...' && php status.php",
+    "debug:path": "echo 'Debugging PHP path...' && php debug_php_path.php",
+    "fix:path": "echo 'Opening PHP path fix guide...' && start PHP_TROUBLESHOOTING_GUIDE.md",
+    "validate": "echo 'Validating configuration...' && php -r \"require_once 'config.php'; echo Config::validate() ? 'Configuration is valid' : 'Configuration has issues';\"",
+    "backup": "echo 'Creating backup...' && powershell -Command \"$date = Get-Date -Format 'yyyy-MM-dd_HH-mm-ss'; $backupDir = 'backups'; if (!(Test-Path $backupDir)) { New-Item -ItemType Directory -Path $backupDir }; Copy-Item -Path '.' -Destination \"$backupDir\\bomoko_backup_$date\" -Recurse -Force; echo 'Backup created successfully'\"",
+    "clean": "echo 'Cleaning temporary files...' && del /q *.tmp *.log 2>nul || echo 'No temporary files found'",
+    "logs": "echo 'Opening logs directory...' && start logs",
+    "docs": "echo 'Opening documentation...' && start README.md",
+    "xampp": "echo 'Opening XAMPP Control Panel...' && start C:\\xampp\\xampp-control.exe",
+    "phpmyadmin": "echo 'Opening phpMyAdmin...' && start http://localhost/phpmyadmin",
+    "apache": "echo 'Opening Apache config...' && start C:\\xampp\\apache\\conf\\httpd.conf",
+    "php:config": "echo 'Opening PHP config...' && start C:\\xampp\\php\\php.ini",
+    "mysql:config": "echo 'Opening MySQL config...' && start C:\\xampp\\mysql\\bin\\my.ini",
+    "check:services": "echo 'Checking XAMPP services...' && powershell -Command \"Get-Service -Name '*apache*', '*mysql*' | Select-Object Name, Status\"",
+    "restart:apache": "echo 'Restarting Apache...' && net stop Apache2.4 && net start Apache2.4",
+    "restart:mysql": "echo 'Restarting MySQL...' && net stop MySQL && net start MySQL",
+    "restart:all": "npm run restart:apache && npm run restart:mysql",
+    "monitor": "echo 'Opening system monitor...' && start http://localhost/bomoko/status.php",
+    "help": "echo 'DRC Embassy Management System - Available Commands:' && echo '  npm run dev          - Start development server' && echo '  npm run test         - Run system tests' && echo '  npm run setup        - Setup database' && echo '  npm run status       - Check system status' && echo '  npm run backup       - Create backup' && echo '  npm run validate     - Validate configuration' && echo '  npm run xampp        - Open XAMPP Control Panel' && echo '  npm run phpmyadmin   - Open phpMyAdmin' && echo '  npm run monitor      - Open system monitor' && echo '  npm run help         - Show this help'"
+  },
+  "keywords": [
+    "embassy",
+    "management",
+    "drc",
+    "visa",
+    "php",
+    "xampp",
+    "mysql"
+  ],
+  "author": "DRC Embassy Nairobi",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/drc-embassy/bomoko"
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "config": {
+    "project_name": "DRC Embassy Management System",
+    "version": "1.0.0",
+    "database_name": "bomoko_db",
+    "xampp_path": "C:\\xampp",
+    "apache_port": 80,
+    "mysql_port": 3306,
+    "php_version": "8.0+"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+} 

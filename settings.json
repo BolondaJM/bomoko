@@ -1,0 +1,240 @@
+{
+  "project": {
+    "name": "DRC Embassy Management System",
+    "version": "1.0.0",
+    "description": "Web-based management system for DRC Embassy in Nairobi, Kenya",
+    "author": "DRC Embassy Nairobi",
+    "year": "2025"
+  },
+  "database": {
+    "host": "localhost",
+    "name": "bomoko_db",
+    "user": "root",
+    "password": "",
+    "charset": "utf8mb4",
+    "port": 3306
+  },
+  "xampp": {
+    "php_path": "C:\\xampp\\php",
+    "apache_path": "C:\\xampp\\apache",
+    "mysql_path": "C:\\xampp\\mysql",
+    "htdocs_path": "C:\\xampp\\htdocs\\bomoko"
+  },
+  "embassy": {
+    "name": "DRC Embassy Nairobi",
+    "address": "Riverside Drive, Nairobi, Kenya",
+    "email": "info@drcembassy.co.ke",
+    "phone": "+254 712 345 678",
+    "website": "http://localhost/bomoko/"
+  },
+  "system": {
+    "upload_dir": "uploads/",
+    "max_file_size": "10MB",
+    "allowed_file_types": ["pdf", "jpg", "jpeg", "png"],
+    "session_timeout": 3600,
+    "debug_mode": false
+  },
+  "features": {
+    "user_registration": true,
+    "visa_applications": true,
+    "incident_reports": true,
+    "admin_dashboard": true,
+    "file_upload": true,
+    "email_notifications": false
+  },
+  "validation": {
+    "password_min_length": 8,
+    "require_password_complexity": true,
+    "passport_prefix": "OP",
+    "dob_future_restriction": true,
+    "travel_date_future_restriction": true
+  },
+  "security": {
+    "password_hashing": true,
+    "session_management": true,
+    "csrf_protection": true,
+    "input_sanitization": true,
+    "sql_injection_protection": true
+  },
+  "paths": {
+    "assets": "assets/",
+    "uploads": "uploads/",
+    "logs": "logs/",
+    "temp": "temp/"
+  },
+  "urls": {
+    "base": "http://localhost/bomoko/",
+    "landing": "http://localhost/bomoko/landing.php",
+    "login": "http://localhost/bomoko/login.php",
+    "register": "http://localhost/bomoko/register.php",
+    "admin": "http://localhost/bomoko/admin.php",
+    "visa": "http://localhost/bomoko/visa.php",
+    "incident": "http://localhost/bomoko/incident.php",
+    "contact": "http://localhost/bomoko/contact.php"
+  },
+  "debug": {
+    "php_check": "http://localhost/bomoko/php_check.php",
+    "debug_path": "http://localhost/bomoko/debug_php_path.php",
+    "fix_path": "http://localhost/bomoko/fix_php_path.php",
+    "test_system": "http://localhost/bomoko/test_system.php",
+    "status": "http://localhost/bomoko/status.php",
+    "setup_database": "http://localhost/bomoko/setup_database.php"
+  },
+  "tables": {
+    "users": {
+      "name": "users",
+      "fields": [
+        "id", "first_name", "middle_name", "last_name", "gender", 
+        "dob", "place_of_birth", "passport_number", "visa_type", 
+        "phone", "email", "residential_address", "county", 
+        "password", "created_at", "is_admin"
+      ]
+    },
+    "visa_applications": {
+      "name": "visa_applications",
+      "fields": [
+        "id", "full_name", "email", "gender", "dob", "country",
+        "passport_number", "visa_type", "duration", "travel_date",
+        "reason", "status", "created_at"
+      ]
+    },
+    "incident_reports": {
+      "name": "incident_reports",
+      "fields": [
+        "id", "full_name", "email", "phone", "incident_type",
+        "description", "incident_date", "incident_address",
+        "reported_police", "created_at"
+      ]
+    },
+    "visa_documents": {
+      "name": "visa_documents",
+      "fields": [
+        "id", "email", "passport_pdf", "supporting_pdf", "uploaded_at"
+      ]
+    }
+  },
+  "php": {
+    "version": "8.0.30",
+    "extensions": [
+      "pdo", "pdo_mysql", "session", "fileinfo", "openssl", "mbstring"
+    ],
+    "ini_file": "C:\\xampp\\php\\php.ini",
+    "error_reporting": "E_ALL",
+    "display_errors": false,
+    "log_errors": true
+  },
+  "apache": {
+    "config_file": "C:\\xampp\\apache\\conf\\httpd.conf",
+    "port": 80,
+    "document_root": "C:\\xampp\\htdocs",
+    "modules": ["php_module", "rewrite_module"]
+  },
+  "mysql": {
+    "config_file": "C:\\xampp\\mysql\\bin\\my.ini",
+    "port": 3306,
+    "data_dir": "C:\\xampp\\mysql\\data",
+    "log_file": "C:\\xampp\\mysql\\data\\mysql_error.log"
+  },
+  "environment": {
+    "development": {
+      "debug_mode": true,
+      "display_errors": true,
+      "log_errors": true
+    },
+    "production": {
+      "debug_mode": false,
+      "display_errors": false,
+      "log_errors": true
+    }
+  },
+  "maintenance": {
+    "backup_enabled": true,
+    "backup_frequency": "daily",
+    "backup_retention": 30,
+    "log_rotation": true,
+    "log_retention": 90
+  },
+  "notifications": {
+    "email_enabled": false,
+    "smtp_host": "",
+    "smtp_port": 587,
+    "smtp_user": "",
+    "smtp_password": "",
+    "from_email": "noreply@drcembassy.co.ke",
+    "from_name": "DRC Embassy Nairobi"
+  },
+  "localization": {
+    "default_language": "en",
+    "supported_languages": ["en", "fr", "sw"],
+    "timezone": "Africa/Nairobi",
+    "date_format": "Y-m-d",
+    "time_format": "H:i:s"
+  },
+  "logging": {
+    "enabled": true,
+    "level": "INFO",
+    "file": "logs/app.log",
+    "max_size": "10MB",
+    "max_files": 5
+  },
+  "performance": {
+    "cache_enabled": false,
+    "cache_duration": 3600,
+    "compression_enabled": true,
+    "minify_css": false,
+    "minify_js": false
+  },
+  "backup": {
+    "database": {
+      "enabled": true,
+      "frequency": "daily",
+      "retention": 30,
+      "path": "backups/database/"
+    },
+    "files": {
+      "enabled": true,
+      "frequency": "weekly",
+      "retention": 12,
+      "path": "backups/files/"
+    }
+  },
+  "monitoring": {
+    "health_check_enabled": true,
+    "health_check_interval": 300,
+    "disk_space_warning": 80,
+    "memory_warning": 80,
+    "cpu_warning": 80
+  },
+  "api": {
+    "enabled": false,
+    "version": "v1",
+    "rate_limit": 100,
+    "rate_limit_window": 3600,
+    "authentication": "token"
+  },
+  "third_party": {
+    "google_maps": {
+      "enabled": true,
+      "api_key": "",
+      "embed_url": "https://www.google.com/maps/embed?pb=..."
+    },
+    "recaptcha": {
+      "enabled": false,
+      "site_key": "",
+      "secret_key": ""
+    }
+  },
+  "customization": {
+    "theme": "default",
+    "logo": "assets/drc logo.png",
+    "favicon": "assets/favicon.ico",
+    "primary_color": "#007bff",
+    "secondary_color": "#6c757d"
+  },
+  "deployment": {
+    "environment": "development",
+    "auto_backup": true,
+    "auto_update": false,
+    "maintenance_mode": false
+  }
+} 

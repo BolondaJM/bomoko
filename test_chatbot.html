@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Test - DRC Embassy</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        .test-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #003366;
+            text-align: center;
+        }
+        .test-questions {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .test-questions h3 {
+            color: #333;
+            margin-top: 0;
+        }
+        .test-questions ul {
+            margin: 10px 0;
+        }
+        .test-questions li {
+            margin: 5px 0;
+            color: #666;
+        }
+        .instructions {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #1976d2;
+        }
+        .instructions h3 {
+            margin-top: 0;
+            color: #1976d2;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>DRC Embassy Chatbot Test</h1>
+        
+        <div class="instructions">
+            <h3>Testing Instructions:</h3>
+            <ol>
+                <li>Click the "Ask Me" button in the bottom right corner</li>
+                <li>Try asking one of the test questions below</li>
+                <li>Check the browser console (F12) for debug information</li>
+                <li>The chatbot should respond with relevant information</li>
+            </ol>
+        </div>
+        
+        <div class="test-questions">
+            <h3>Test Questions to Try:</h3>
+            <ul>
+                <li>"Where is the embassy located?"</li>
+                <li>"What are your working hours?"</li>
+                <li>"How do I apply for a visa?"</li>
+                <li>"How long does visa processing take?"</li>
+                <li>"What documents do I need for a visa?"</li>
+                <li>"Can I book an appointment?"</li>
+                <li>"Do you provide notary services?"</li>
+            </ul>
+        </div>
+        
+        <div class="instructions">
+            <h3>Expected Behavior:</h3>
+            <ul>
+                <li>Chatbot should open when you click "Ask Me"</li>
+                <li>Welcome message should appear</li>
+                <li>Your questions should get relevant answers</li>
+                <li>Console should show debug information</li>
+            </ul>
+        </div>
+        
+        <p style="text-align: center; margin-top: 30px; color: #666;">
+            Look for the "Ask Me" button in the bottom right corner ↓
+        </p>
+    </div>
+    
+    <!-- Load the chatbot -->
+    <script src="assets/chatbot.js"></script>
+</body>
+</html>
